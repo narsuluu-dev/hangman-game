@@ -10,4 +10,8 @@
  */ 
 
 // where the program starts,creating steps and write the pseudocode first  
-// 1. 
+// 1. create  a list of possible guesses 
+// 2. Select a random word from a list 
+// 3. Create an empty list to store the guessed worrds
+// 4. use while loop to track user's guesses 
+//  - disply an
