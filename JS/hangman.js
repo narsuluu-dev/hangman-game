@@ -22,11 +22,21 @@ const  possibleGuesses = [
 // 2. Select a random word from a list  
 function getRandom(word){ 
     for(let i=0; i<word.length; i++) { 
-        Math
+        return Math.random(word[i]); 
     }
 
 }
-// 3. Create an empty list to store the guessed worrds
+// 3. Create an empty list to store the guessed worrds 
+function storeGuessedWords(word, guessedWords) { 
+    // variable to store words
+   let result = []; 
+   for( w in guessedWords) { 
+    result+=w; 
+   } 
+   return
+
+
+ }
 // 4. use while loop to track user's guesses 
 //  - disply the current word with guessed letters 
 //  - show remaining attempts 
