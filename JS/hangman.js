@@ -15,7 +15,8 @@ const  possibleGuesses = [
     "computer", "algorithm", "database", "boolean",
     "flag", "variable", "programming", "cpu", "string", 
     "array", "float", "integer", "loop", "funciton", "method", 
-    "class", "object", "debugging", "software", "hoisting", ""
+    "class", "object", "debugging", "software", "hoisting", "scope", 
+    "character", "closure"
 
 
 
