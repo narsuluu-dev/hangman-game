@@ -11,6 +11,15 @@
 
 // where the program starts,creating steps and write the pseudocode first  
 // 1. create  a list of possible guesses 
+const  possibleGuesses = [
+    "computer", "algorithm", "database", "boolean",
+    "flag", "variable", "programming", "cpu", "string", 
+    "array", "float", "integer", "loop", "funciton", "method", 
+    "class", ""
+
+
+
+]
 // 2. Select a random word from a list 
 // 3. Create an empty list to store the guessed worrds
 // 4. use while loop to track user's guesses 
@@ -31,4 +40,11 @@
 //  display correct guess 
 // otherwise , wrong guess
 
-// if the guessed, display a message 
+// if the guessed, display a message  
+
+// end while 
+// if attempts are reached 0 
+// display message 
+// display the correct word 
+
+// end the program 
