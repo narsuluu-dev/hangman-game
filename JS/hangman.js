@@ -18,10 +18,14 @@ const  possibleGuesses = [
     "class", "object", "debugging", "software", "hoisting", "scope", 
     "character", "closure"
 
+]; 
+// 2. Select a random word from a list  
+function getRandom(word){ 
+    for(let i=0; i<word.length; i++) { 
+        Math
+    }
 
-
-]
-// 2. Select a random word from a list 
+}
 // 3. Create an empty list to store the guessed worrds
 // 4. use while loop to track user's guesses 
 //  - disply the current word with guessed letters 
