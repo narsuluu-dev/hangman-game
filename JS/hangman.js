@@ -8,3 +8,6 @@
  * Student Name: Narsuluu Mamadinova 
  * 
  */ 
+
+// where the program starts,creating steps and write the pseudocode first  
+// 1. 
