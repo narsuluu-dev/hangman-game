@@ -14,4 +14,21 @@
 // 2. Select a random word from a list 
 // 3. Create an empty list to store the guessed worrds
 // 4. use while loop to track user's guesses 
-//  - disply an
+//  - disply the current word with guessed letters 
+//  - show remaining attempts 
+//  -  Ask the player to enter a letter 
+//  - if input is not a valid letter 
+//  - display error message 
+//  - continue 
+
+//   if a letter  was already guessed 
+//  - display a message, like already guessed 
+//  - continue to next loop 
+
+// add the letter to guessed letters list 
+
+//  if lettr exists in the word 
+//  display correct guess 
+// otherwise , wrong guess
+
+// if the guessed, display a message 
