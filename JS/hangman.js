@@ -30,6 +30,7 @@ function getRandom(word){
 function storeGuessedWords(word, guessedWords) { 
     // variable to store words
    let result = []; 
+   // loop through the words and store while
    for( w in guessedWords) { 
     result+=w; 
    } 
