@@ -15,7 +15,7 @@ const prompt = require('prompt-sync')({sigint: true});  // instaling a package f
 const  possibleGuesses = [
     "computer", "algorithm", "database", "boolean",
     "flag", "variable", "programming", "cpu", "string", 
-    "array", "float", "integer", "loop", "funciton", "method", 
+    "array", "float", "integer", "loop", "function", "method", 
     "class", "object", "debugging", "software", "hoisting", "scope", 
     "character", "closure"
 
@@ -52,9 +52,6 @@ let word = getRandom(possibleGuesses);
 // to store the guessed letters
 let guessedLetters = [];  
 
-// display current word progress 
-displayWords(word, guessedLetters); 
-
 // show attempts 
 let attempts = 6
 while(attempts > 0) {  
@@ -84,13 +81,16 @@ while(attempts > 0) {
     else{ 
         attempts--; 
         console.log("Wrong Guess! Attempts left: " + attempts); 
-    }
+    } 
+
+    // display current word progress 
+    displayWords(word, guessedLetters); 
 
 
     // check if user won 
     let won = true; 
     for(let letter of word) { 
-        if(!word.includes(letter)) { 
+        if(!guessedLetters.includes(letter)) { 
             // if not won set to false
             won = false;  
             // break the program
