@@ -24,7 +24,7 @@ function getRandom(word){
     for(let i=0; i<word.length; i++) { 
      // randomly select word 
      constRandom = Math.floor(Math.random() * word.length); 
-     return words[constRandom]; 
+     return word[constRandom]; 
     } 
 
 }
@@ -76,8 +76,16 @@ while(attempts > 0) {
 
     // check if a letter exists in the word 
     if(guessedWords.includes(userInput)) { 
-        
-    }
+        console.log("Correct Guess!"); 
+    } 
+    else{ 
+        attempts--; 
+        console.log("Wrong Guess! Attempts left: " + attempts); 
+    } 
+
+    // display current word progress 
+    storeGuessedWords(word, guessedWords); 
+    
 
 
      
@@ -94,9 +102,9 @@ while(attempts > 0) {
 
 // add the letter to guessed letters list  - done
 
-//  if lettr exists in the word 
-//  display correct guess 
-// otherwise , wrong guess
+//  if lettr exists in the word  - done
+//  display correct guess - done 
+// otherwise , wrong guess - done 
 
 // if the guessed, display a message  
 
