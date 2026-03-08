@@ -54,7 +54,7 @@ function storeGuessedWords(word, guessedWords) {
 while(word < 6) {  
     // read the user input 
     let userInput = prompt("Enter a letter: "); 
-     
+    // iterate the user's input and check if it's valid 
      
 
 }
