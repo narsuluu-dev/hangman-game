@@ -29,37 +29,36 @@ function getRandom(word){
     } 
 
 }
-// 3. Create an empty list to store the guessed worrds 
+// 3.  Function that store user's correct guessed letters
 function storeGuessedWords(word, guessedWords) { 
-    // variable to store words
+    // variable to store guessed letter
    let result = []; 
    // loop through the words and store while iterating
   for(let letter of word) {  
     // check if user has guessed a word
     if(guessedWords.includes(letter)){ 
+        // add correct letter to the result.
         result += letter + ""; 
     } 
     else { 
+        // otherwise leave it empty
         result+= "_ "; 
 
     } 
    } 
-    // display the word
-   console.log(result);   
-
-
-
-
- }
-// 4. use while loop to track user's guesses 
-// read a user input 
-
-while(word < 6) {   
-    // read user input 
-    
-
-    
+    // display the guessed letter to the console
+   console.log(result);  
 }
+ 
+// 4. use while loop to track user's guesses 
+while(word < 6) {  
+    // read the user input 
+    let userInput = prompt("Enter a letter: "); 
+     
+     
+
+}
+     
 //  - disply the current word with guessed letters 
 //  - show remaining attempts 
 //  -  Ask the player to enter a letter 
