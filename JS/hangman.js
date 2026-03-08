@@ -105,33 +105,4 @@ while(attempts > 0) {
         }
 
         
-    }
-
-
-
-
-     
-
-//  -  Ask the player to enter a letter - done 
-//  - if input is not a valid letter  - done 
-//  - display error message  - done 
-//  - continue  - done
-
-//   if a letter  was already guessed  - done 
-//  - display a message, like already guessed  - done
-//  - continue to next loop - done
-
-// add the letter to guessed letters list  - done
-
-//  if lettr exists in the word  - done
-//  display correct guess - done 
-// otherwise , wrong guess - done 
-
-// if the guessed, display a message  - done 
-
-// end while 
-// if attempts are reached 0 
-// display message 
-// display the correct word 
-
-// end the program 
+    } 
