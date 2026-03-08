@@ -24,21 +24,20 @@ function getRandom(word){
     for(let i=0; i<word.length; i++) { 
      // randomly select word 
      constRandom = Math.floor(Math.random() * word.length); 
-     let r = word[i]; 
-     return r; 
+     return words[constRandom]; 
     } 
 
 }
 // 3.  Function that store user's correct guessed letters
 function storeGuessedWords(word, guessedWords) { 
     // variable to store guessed letter
-   let result = []; 
+   let result = ""; 
    // loop through the words and store while iterating
   for(let letter of word) {  
     // check if user has guessed a word
     if(guessedWords.includes(letter)){ 
         // add correct letter to the result.
-        result += letter + ""; 
+        result += letter + " "; 
     } 
     else { 
         // otherwise leave it empty
@@ -50,7 +49,9 @@ function storeGuessedWords(word, guessedWords) {
    console.log(result);  
 }
  
-// 4. use while loop to track user's guesses and attempts remain 
+// 4. use while loop to track user's guesses and attempts remain  
+let word = getRandom(possibleGuesses); 
+let guessedLetters = []; 
 // show attempts 
 let attempts = 6
 while(attempts > 0) {  
@@ -70,7 +71,13 @@ while(attempts > 0) {
         continue; 
 
     } 
-    // add the letter to 
+    // add the letter to guessed letter list 
+    guessedWords.push(userInput);  
+
+    // check if a letter exists in the word 
+    if(guessedWords.includes(userInput)) { 
+        
+    }
 
 
      
@@ -85,7 +92,7 @@ while(attempts > 0) {
 //  - display a message, like already guessed  - done
 //  - continue to next loop - done
 
-// add the letter to guessed letters list 
+// add the letter to guessed letters list  - done
 
 //  if lettr exists in the word 
 //  display correct guess 
