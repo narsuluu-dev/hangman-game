@@ -84,8 +84,24 @@ while(attempts > 0) {
     } 
 
     // display current word progress 
-    storeGuessedWords(word, guessedWords); 
-    
+    storeGuessedWords(word, guessedWords);  
+
+    // check if user won 
+    let won = true; 
+    for(let letter of word) { 
+        if(!guessedWords.includes(letter)) { 
+            // if not won set to false
+            won = false;  
+            // break the program
+            break; 
+            
+        
+        } 
+        } 
+
+        console.log("Congratulations! ")
+    }
+
 
 
      
@@ -106,7 +122,7 @@ while(attempts > 0) {
 //  display correct guess - done 
 // otherwise , wrong guess - done 
 
-// if the guessed, display a message  
+// if the guessed, display a message  - done 
 
 // end while 
 // if attempts are reached 0 
