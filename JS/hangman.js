@@ -104,5 +104,5 @@ while(attempts > 0) {
             break; 
         }
 
-        
+       // end of the game  
     } 
