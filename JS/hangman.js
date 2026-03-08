@@ -30,15 +30,25 @@ function getRandom(word){
 function storeGuessedWords(word, guessedWords) { 
     // variable to store words
    let result = []; 
-   // loop through the words and store while
-   for( w in guessedWords) { 
-    result+=w; 
-   } 
-   return
+   // loop through the words and store while iterating
+  for(let letter of word) { 
+    if(guessedWords.includes(letter)){ 
+        result += letter + "_" 
+    } 
+    else()
+   }
 
 
  }
 // 4. use while loop to track user's guesses 
+// read a user input 
+
+while(word < 6) {   
+    // read user input 
+    
+
+    
+}
 //  - disply the current word with guessed letters 
 //  - show remaining attempts 
 //  -  Ask the player to enter a letter 
