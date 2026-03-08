@@ -23,11 +23,11 @@ const  possibleGuesses = [
 // 2. Select a random word from a list  
 function getRandom(words){  
      // randomly select word 
-     const randomIndx = Math.floor(Math.random() * word.length); 
+     const randomIndx = Math.floor(Math.random() * words.length); 
      return words[randomIndx]; 
     } 
-// 3.  Function that store user's correct guessed letters
-function storeGuessedWords(word, guessedWords) { 
+// 3.  Function that displays the word progress 
+function displayWords(word, guessedWords) { 
     // variable to store guessed letter
    let result = ""; 
    // loop through the words and store while iterating
@@ -52,10 +52,9 @@ let word = getRandom(possibleGuesses);
 // to store the guessed letters
 let guessedLetters = [];  
 
-
 // display current word progress 
-storeGuessedWords(word, guessedLetters); 
- 
+displayWords(word, guessedLetters); 
+
 // show attempts 
 let attempts = 6
 while(attempts > 0) {  
@@ -70,7 +69,7 @@ while(attempts > 0) {
     }  
 
     // if a letter already guessed 
-    if(word.includes(userInput)){
+    if(guessedLetters.includes(userInput)){
         console.log("You already guessed that letter"); 
         continue; 
 
@@ -79,7 +78,7 @@ while(attempts > 0) {
     guessedLetters.push(userInput);  
 
     // check if a letter exists in the word 
-    if(guessedLetters.includes(userInput)) { 
+    if(word.includes(userInput)) { 
         console.log("Correct Guess!"); 
     } 
     else{ 
@@ -91,7 +90,7 @@ while(attempts > 0) {
     // check if user won 
     let won = true; 
     for(let letter of word) { 
-        if(!guessedLetters.includes(letter)) { 
+        if(!word.includes(letter)) { 
             // if not won set to false
             won = false;  
             // break the program
@@ -106,5 +105,11 @@ while(attempts > 0) {
             break; 
         }
 
-       // end of the game  
-    } 
+       
+        // if  there are no attempts left 
+        if(attempts === 0) {
+        console.log("Game Over!");
+        console.log("The correct word was: " + word); 
+        }
+}
+ 
