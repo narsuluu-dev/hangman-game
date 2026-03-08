@@ -50,25 +50,40 @@ function storeGuessedWords(word, guessedWords) {
    console.log(result);  
 }
  
-// 4. use while loop to track user's guesses 
-while(word < 6) {  
+// 4. use while loop to track user's guesses and attempts remain 
+// show attempts 
+let attempts = 6
+while(attempts > 0) {  
     // read the user input 
-    let userInput = prompt("Enter a letter: "); 
-    // iterate the user's input and check if it's valid 
-     
+    let userInput = prompt("Enter a letter: ");  
+    // convert a user input to a lowecase
+    userInput = userInput.toLocaleLowerCase();
+    // check if user's input valid 
+    if(userInput.length!==1) { 
+        console.log("Please enter only a letter");  
+        continue; 
+    }  
 
+    // if a letter already guessed 
+    if(guessedWords.includes(userInput)){
+        console.log("You already guessed that letter"); 
+        continue; 
+
+    } 
+    // add the letter to 
+
+
+     
 }
-     
-//  - disply the current word with guessed letters 
-//  - show remaining attempts 
-//  -  Ask the player to enter a letter 
-//  - if input is not a valid letter 
-//  - display error message 
-//  - continue 
 
-//   if a letter  was already guessed 
-//  - display a message, like already guessed 
-//  - continue to next loop 
+//  -  Ask the player to enter a letter - done 
+//  - if input is not a valid letter  - done 
+//  - display error message  - done 
+//  - continue  - done
+
+//   if a letter  was already guessed  - done 
+//  - display a message, like already guessed  - done
+//  - continue to next loop - done
 
 // add the letter to guessed letters list 
 
