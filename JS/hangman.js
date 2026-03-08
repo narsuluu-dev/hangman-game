@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')({sigint: true});  // instaling a package for a prompt to get the user input 
 /**
  * Project Name: Hangman Game 
  * Project Description: This project is a console-based Hangman game built using pure JavaScript.  
@@ -20,14 +21,11 @@ const  possibleGuesses = [
 
 ]; 
 // 2. Select a random word from a list  
-function getRandom(word){ 
-    for(let i=0; i<word.length; i++) { 
+function getRandom(word){  
      // randomly select word 
-     constRandom = Math.floor(Math.random() * word.length); 
-     return word[constRandom]; 
+     const randomIndx = Math.floor(Math.random() * word.length); 
+     return word[randomIndx]; 
     } 
-
-}
 // 3.  Function that store user's correct guessed letters
 function storeGuessedWords(word, guessedWords) { 
     // variable to store guessed letter
@@ -50,7 +48,8 @@ function storeGuessedWords(word, guessedWords) {
 }
  
 // 4. use while loop to track user's guesses and attempts remain  
-let word = getRandom(possibleGuesses); 
+let word = getRandom(possibleGuesses);  
+// to store the guessed letters
 let guessedLetters = []; 
 // show attempts 
 let attempts = 6
@@ -66,22 +65,23 @@ while(attempts > 0) {
     }  
 
     // if a letter already guessed 
-    if(guessedWords.includes(userInput)){
+    if(guessedLetters.includes(userInput)){
         console.log("You already guessed that letter"); 
         continue; 
 
     } 
     // add the letter to guessed letter list 
-    guessedWords.push(userInput);  
+    guessedLetters.push(userInput);  
 
     // check if a letter exists in the word 
-    if(guessedWords.includes(userInput)) { 
+    if(guessedLetters.includes(userInput)) { 
         console.log("Correct Guess!"); 
     } 
     else{ 
         attempts--; 
         console.log("Wrong Guess! Attempts left: " + attempts); 
-    } 
+    }
+
 
     // display current word progress 
     storeGuessedWords(word, guessedWords);  
@@ -89,7 +89,7 @@ while(attempts > 0) {
     // check if user won 
     let won = true; 
     for(let letter of word) { 
-        if(!guessedWords.includes(letter)) { 
+        if(!guessedLetters.includes(letter)) { 
             // if not won set to false
             won = false;  
             // break the program
