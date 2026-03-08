@@ -22,8 +22,11 @@ const  possibleGuesses = [
 // 2. Select a random word from a list  
 function getRandom(word){ 
     for(let i=0; i<word.length; i++) { 
-        return Math.random(word[i]); 
-    }
+     // randomly select word 
+     constRandom = Math.floor(Math.random() * word.length); 
+     let r = word[i]; 
+     return r; 
+    } 
 
 }
 // 3. Create an empty list to store the guessed worrds 
@@ -31,12 +34,20 @@ function storeGuessedWords(word, guessedWords) {
     // variable to store words
    let result = []; 
    // loop through the words and store while iterating
-  for(let letter of word) { 
+  for(let letter of word) {  
+    // check if user has guessed a word
     if(guessedWords.includes(letter)){ 
-        result += letter + "_" 
+        result += letter + ""; 
     } 
-    else()
-   }
+    else { 
+        result+= "_ "; 
+
+    } 
+   } 
+    // display the word
+   console.log(result);   
+
+
 
 
  }
