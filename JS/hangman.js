@@ -96,16 +96,21 @@ while(attempts > 0) {
             break; 
             
         
-        } 
-        } 
+           } 
+        }  
+        
+        if(won) { 
+            console.log("Congratulations! You guessed the word: " + word); 
+            break; 
+        }
 
-        console.log("Congratulations! ")
+        
     }
 
 
 
+
      
-}
 
 //  -  Ask the player to enter a letter - done 
 //  - if input is not a valid letter  - done 
