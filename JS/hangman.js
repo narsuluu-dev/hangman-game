@@ -21,10 +21,10 @@ const  possibleGuesses = [
 
 ]; 
 // 2. Select a random word from a list  
-function getRandom(word){  
+function getRandom(words){  
      // randomly select word 
      const randomIndx = Math.floor(Math.random() * word.length); 
-     return word[randomIndx]; 
+     return words[randomIndx]; 
     } 
 // 3.  Function that store user's correct guessed letters
 function storeGuessedWords(word, guessedWords) { 
@@ -50,14 +50,19 @@ function storeGuessedWords(word, guessedWords) {
 // 4. use while loop to track user's guesses and attempts remain  
 let word = getRandom(possibleGuesses);  
 // to store the guessed letters
-let guessedLetters = []; 
+let guessedLetters = [];  
+
+
+// display current word progress 
+storeGuessedWords(word, guessedLetters); 
+ 
 // show attempts 
 let attempts = 6
 while(attempts > 0) {  
     // read the user input 
     let userInput = prompt("Enter a letter: ");  
     // convert a user input to a lowecase
-    userInput = userInput.toLocaleLowerCase();
+    userInput = userInput.toLowerCase();
     // check if user's input valid 
     if(userInput.length!==1) { 
         console.log("Please enter only a letter");  
@@ -65,7 +70,7 @@ while(attempts > 0) {
     }  
 
     // if a letter already guessed 
-    if(guessedLetters.includes(userInput)){
+    if(word.includes(userInput)){
         console.log("You already guessed that letter"); 
         continue; 
 
@@ -82,9 +87,6 @@ while(attempts > 0) {
         console.log("Wrong Guess! Attempts left: " + attempts); 
     }
 
-
-    // display current word progress 
-    storeGuessedWords(word, guessedWords);  
 
     // check if user won 
     let won = true; 
