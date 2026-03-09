@@ -59,8 +59,8 @@ while(attempts > 0) {
     let userInput = prompt("Enter a letter: ");  
     // convert a user input to a lowecase
     userInput = userInput.toLowerCase();
-    // check if user's input valid 
-    if(typeof userInput !== 'string' || userInput.length !== 0) { 
+    // check if user's input valid, used RegExpr
+    if(!/^[a-z]$/.test(userInput)) {
         console.log("Please enter only a letter");  
         continue; 
     }  
