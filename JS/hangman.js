@@ -11,7 +11,11 @@ const prompt = require('prompt-sync')({sigint: true});  // instaling a package f
  */ 
 
 
-/** 1. Create  a list of possible guesses */ 
+
+/**
+ * 1. Create a list of possible words for the game
+ * These words are programming and computer science related terms.
+ */
 const  possibleGuesses = [
     "computer", "algorithm", "database", "boolean",
     "flag", "variable", "programming", "cpu", "string", 
@@ -20,7 +24,10 @@ const  possibleGuesses = [
     "character", "closure"
 
 ]; 
-/**  2. Select a random word from a list  */ 
+/**  
+ * 2. Select a random word from a list 
+ * This function returns one randomly chosen word. 
+ */ 
 function getRandom(words){  
      // randomly select word 
      const randomIndx = Math.floor(Math.random() * words.length); 
@@ -28,7 +35,11 @@ function getRandom(words){
     } 
 
 
-/** 3. Function that displays the word progress  */
+/** 3. Function that displays the word progress 
+ * Letters that have been guessed are shown,
+ * while the remaining letters appear as underscores.
+ */
+
 function displayWords(word, guessedWords) { 
     // variable to store guessed letter
    let result = ""; 
@@ -48,15 +59,32 @@ function displayWords(word, guessedWords) {
     // display the guessed letter to the console
    console.log(result);  
 }
- 
-/** 4. Use while loop to track user's guesses and attempts remain  */
-let word = getRandom(possibleGuesses);  
-// create a list to store the guessed letters
+  
+
+
+/**
+ * 5. Main Function of the game
+ * This function initializes the game variables, handles user guesses,
+ * tracks remaining attempts, and controls the main game loop until
+ * the player either wins or runs out of attempts.
+ */
+function startGame() {  
+
+let word = getRandom(possibleGuesses); 
 let guessedLetters = [];  
-// show current progress 
+
 displayWords(word, guessedLetters); 
-// show attempts 
-let attempts = 6
+
+/**
+ * Track the number of attempts user has left
+ */
+let attempts = 6 
+
+/** 
+ * 6. loop
+ * Game continues until user is out of attempts
+ * or gussed the word
+ */
 while(attempts > 0) {  
     // read the user input 
     let userInput = prompt("Enter a letter: ");  
@@ -65,7 +93,6 @@ while(attempts > 0) {
     // check if user's input valid, used RegExpr
     if(!/^[a-z]$/.test(userInput)) {
         console.log("Please enter only a valid letter (a-z)");  
-        // continue the program 
         continue; 
     }  
 
@@ -75,7 +102,7 @@ while(attempts > 0) {
         continue; 
 
     } 
-    // add the letter to guessed letter list 
+    // store a word to a list, so it cannot be entered again 
     guessedLetters.push(userInput);  
 
     // check if a letter exists in the word 
@@ -114,6 +141,12 @@ while(attempts > 0) {
         console.log("Game Over!");
         console.log("The correct word was: " + word); 
         } 
-        // end of program 
-}
+        // end of program  
+} 
+
+ } 
+
+ startGame();  
+ // call the function 
+ 
  
