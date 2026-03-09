@@ -60,7 +60,7 @@ while(attempts > 0) {
     // convert a user input to a lowecase
     userInput = userInput.toLowerCase();
     // check if user's input valid 
-    if(userInput.length!==1) { 
+    if(typeof userInput !== 'string' || userInput.length !== 0) { 
         console.log("Please enter only a letter");  
         continue; 
     }  
