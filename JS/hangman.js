@@ -63,7 +63,7 @@ function displayWords(word, guessedWords) {
 
 
 /**
- * 5. Main Function of the game
+ * 4. Main Function of the game
  * This function initializes the game variables, handles user guesses,
  * tracks remaining attempts, and controls the main game loop until
  * the player either wins or runs out of attempts.
@@ -78,13 +78,19 @@ displayWords(word, guessedLetters);
 /**
  * Track the number of attempts user has left
  */
-let attempts = 6 
+let attempts = 6; 
 
 /** 
- * 6. loop
+ * Welcom user and start the game
+ */
+console.log("Welcome to Hangman!");
+console.log("You have 6 attempts to guess the word."); 
+
+/** 
+ * 5. Game Loop
  * Game continues until user is out of attempts
  * or gussed the word
- */
+ */ 
 while(attempts > 0) {  
     // read the user input 
     let userInput = prompt("Enter a letter: ");  
@@ -115,7 +121,7 @@ while(attempts > 0) {
         console.log("Wrong Guess! Attempts left: " + attempts); 
     } 
 
-    // display current word progress 
+
      displayWords(word, guessedLetters); 
 
 
@@ -125,7 +131,6 @@ while(attempts > 0) {
         if(!guessedLetters.includes(letter)) { 
             // if not won set to false
             won = false;  
-            // break the program
             break; 
           } 
         }  
@@ -133,20 +138,19 @@ while(attempts > 0) {
         if(won) { 
             console.log("Congratulations! You guessed the word: " + word); 
             break; 
-        }
+        } 
+} 
 
-       
-        // if there are no attempts left display the correct word was
+      // if there are no attempts left display the correct word was
         if(attempts === 0) {
         console.log("Game Over!");
         console.log("The correct word was: " + word); 
         } 
         // end of program  
-} 
 
  } 
 
  startGame();  
  // call the function 
- 
+
  
