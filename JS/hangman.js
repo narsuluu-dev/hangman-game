@@ -61,7 +61,7 @@ while(attempts > 0) {
     userInput = userInput.toLowerCase();
     // check if user's input valid, used RegExpr
     if(!/^[a-z]$/.test(userInput)) {
-        console.log("Please enter only a letter");  
+        console.log("Please enter only a valid letter (a-z)");  
         continue; 
     }  
 
