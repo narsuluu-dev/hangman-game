@@ -10,8 +10,8 @@ const prompt = require('prompt-sync')({sigint: true});  // instaling a package f
  * 
  */ 
 
-// where the program starts,creating steps and write the pseudocode first  
-// 1. create  a list of possible guesses 
+
+/** 1. Create  a list of possible guesses */ 
 const  possibleGuesses = [
     "computer", "algorithm", "database", "boolean",
     "flag", "variable", "programming", "cpu", "string", 
@@ -20,13 +20,15 @@ const  possibleGuesses = [
     "character", "closure"
 
 ]; 
-// 2. Select a random word from a list  
+/**  2. Select a random word from a list  */ 
 function getRandom(words){  
      // randomly select word 
      const randomIndx = Math.floor(Math.random() * words.length); 
      return words[randomIndx]; 
     } 
-// 3.  Function that displays the word progress 
+
+
+/** 3. Function that displays the word progress  */
 function displayWords(word, guessedWords) { 
     // variable to store guessed letter
    let result = ""; 
@@ -47,21 +49,23 @@ function displayWords(word, guessedWords) {
    console.log(result);  
 }
  
-// 4. use while loop to track user's guesses and attempts remain  
+/** 4. Use while loop to track user's guesses and attempts remain  */
 let word = getRandom(possibleGuesses);  
-// to store the guessed letters
+// create a list to store the guessed letters
 let guessedLetters = [];  
-
+// show current progress 
+displayWords(word, guessedLetters); 
 // show attempts 
 let attempts = 6
 while(attempts > 0) {  
     // read the user input 
     let userInput = prompt("Enter a letter: ");  
-    // convert a user input to a lowecase
+    // automatically convert a user input to a lowecase if typed uppercase
     userInput = userInput.toLowerCase();
     // check if user's input valid, used RegExpr
     if(!/^[a-z]$/.test(userInput)) {
         console.log("Please enter only a valid letter (a-z)");  
+        // continue the program 
         continue; 
     }  
 
@@ -78,13 +82,14 @@ while(attempts > 0) {
     if(word.includes(userInput)) { 
         console.log("Correct Guess!"); 
     } 
+    // otherwise show remain attempts if not exist 
     else{ 
         attempts--; 
         console.log("Wrong Guess! Attempts left: " + attempts); 
     } 
 
     // display current word progress 
-    displayWords(word, guessedLetters); 
+     displayWords(word, guessedLetters); 
 
 
     // check if user won 
@@ -95,21 +100,20 @@ while(attempts > 0) {
             won = false;  
             // break the program
             break; 
-            
-        
-           } 
+          } 
         }  
-        
+        // if won display a message
         if(won) { 
             console.log("Congratulations! You guessed the word: " + word); 
             break; 
         }
 
        
-        // if  there are no attempts left 
+        // if there are no attempts left display the correct word was
         if(attempts === 0) {
         console.log("Game Over!");
         console.log("The correct word was: " + word); 
-        }
+        } 
+        // end of program 
 }
  
